@@ -17,9 +17,9 @@ from django.conf.urls import url
 from django.contrib import admin
 # importe explicitamente o modulo da view e passe a funcao view como 
 # parametro para a funcao url()
-from eventex.core import views as eventex_views
+from eventex.core.views import home
 
 urlpatterns = [
-    url(r'^$', eventex_views.home),
+    url(r'^$', home),
     url(r'^admin/', admin.site.urls),
 ]
