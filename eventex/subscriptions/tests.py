@@ -2,6 +2,7 @@ from django.core import mail
 from django.test import TestCase
 from eventex.subscriptions.forms import SubscriptionForm 
 
+
 class SubscribeTest(TestCase):
     def setUp(self):
         self.resp = self.client.get('/inscricao/')
@@ -13,6 +14,7 @@ class SubscribeTest(TestCase):
     def test_template(self):
         """Must use subscriptions/subscription_form.html """
         self.assertTemplateUsed(self.resp, 'subscriptions/subscription_form.html')
+
 
     def test_hmtl(self):
         """Html must contain input tags"""
@@ -95,3 +97,12 @@ class SubscribeInvalidPost(TestCase):
     def test_form_has_errors(self):
         form = self.resp.context['form']
         self.assertTrue(form.errors)
+
+
+class SubscribeSuccessMessage(TestCase):
+    def test_message(self):
+        data = dict(name='Henrique Bastos', cpf='12345678901',
+                    email='henrique@bastos.net', phone='21-99618-6180')
+
+        response = self.client.post('/inscricao/', data, follow=True)
+        self.assertContains(response, 'Inscrição realizada com sucesso!')
