@@ -1,6 +1,8 @@
 # Eventex
-Sistema gerenciador de eventos
-Feito durante o curso WTTD
+Sistema gerenciador de eventos encomendado pela Morena.
+
+[![Build Status](https://travis-ci.org/rogeriofonseca/eventex.svg?branch=master)](https://travis-ci.org/rogeriofonseca/eventex)
+[![Code Health](https://landscape.io/github/rogeriofonseca/eventex/master/landscape.svg?style=flat)](https://landscape.io/github/rogeriofonseca/eventex/master)
 
 ## Como desenvolver ?
 
